@@ -1,4 +1,4 @@
-package history_model;
+package history_module;
 
 import java.util.Collection;
 import java.util.LinkedList;
@@ -6,12 +6,11 @@ import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import util.HistoryEvaluator;
 
-public class HistoryLinkedListStore {
+public class History {
 	private static LinkedList<HistoryToken> theList;
 	
-	public HistoryLinkedListStore() {
+	public History() {
 		theList = new LinkedList<>();
 	}
 	
@@ -28,11 +27,7 @@ public class HistoryLinkedListStore {
 	}
 	
 	public Set<HistoryToken> find(Predicate<HistoryToken> predicate) {
-		long start = System.currentTimeMillis();
 		Set<HistoryToken> newSet = theList.stream().filter(t -> predicate.test(t)).collect(Collectors.toSet());
-		long end = System.currentTimeMillis();
-		long timeTook = end - start;
-		HistoryEvaluator.listResults.add((int) timeTook);
 		return newSet;
 	}
 	

@@ -1,13 +1,13 @@
-package user_model;
+package user_module;
 
 import java.util.Collection;
+
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import util.UserEvaluator;
 
 public class UserTreeMapStore {
 
@@ -30,11 +30,7 @@ public class UserTreeMapStore {
 	}
 	
 	public Set<User> find(Predicate<User> predicate){
-		long start = System.currentTimeMillis();
 		Set<User> tempSet = new HashSet<>(theMap.values());
-		long end = System.currentTimeMillis();
-		long timeTook = end - start;
-		UserEvaluator.mapResults.add((int) timeTook);
 		return tempSet.stream().filter(t -> predicate.test(t)).collect(Collectors.toSet());	
 	}
 	

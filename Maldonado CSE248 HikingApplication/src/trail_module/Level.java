@@ -1,4 +1,4 @@
-package trail_model;
+package trail_module;
 
 public enum Level {
 	EASY, MODERATE, HARD;

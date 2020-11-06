@@ -1,13 +1,13 @@
 
-package trail_model;
+package trail_module;
 
 import java.util.Collection;
+
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import util.TrailEvaluator;
 
 public class TrailTreeSetStore {
 	private static TreeSet<Trail> theSet;
@@ -30,11 +30,7 @@ public class TrailTreeSetStore {
 	
 
 	public Set<Trail> find(Predicate<Trail> predicate) {
-		long start = System.currentTimeMillis();
 		Set<Trail> newSet = theSet.stream().filter(t -> predicate.test(t)).collect(Collectors.toSet());
-		long end = System.currentTimeMillis();
-		long timeTook = end - start;
-		TrailEvaluator.setResults.add((int) timeTook);
 		return newSet;
 	}
 

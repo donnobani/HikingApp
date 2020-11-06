@@ -1,16 +1,19 @@
-package history_model;
+package history_module;
 
-import user_model.User;
 
 public class HistoryToken { //one token per trail on history
 	private String trailName;
 	private long dateAndTime;
 	private double distance;
 	private double duration;
-	private String photosTaken;
 	
-	public HistoryToken(String trailName) {
+	
+	public HistoryToken(String trailName, long dateAndTime, double distance, double duration) {
+		super();
 		this.trailName = trailName;
+		this.dateAndTime = dateAndTime;
+		this.distance = distance;
+		this.duration = duration;
 	}
 
 	public String getTrailName() {
@@ -45,13 +48,6 @@ public class HistoryToken { //one token per trail on history
 		this.duration = duration;
 	}
 
-	public String getPhotosTaken() {
-		return photosTaken;
-	}
-
-	public void setPhotosTaken(String photosTaken) {
-		this.photosTaken = photosTaken;
-	}
 	
 	public int compareTo(HistoryToken u) {
 		if (trailName.compareTo(u.trailName) == 0) {

@@ -1,17 +1,21 @@
-package user_model;
+package user_module;
 
+import history_module.History;
 
 public class User implements Comparable<User> {
 	private String username;
 	private String password;
-	private String proPic; // not implemented
-	//private History history
+	private String proPicAddress; 
+	private History history;
 	private String id;
+	private UserType type;
 
 	private static int idCounter = 0;
 
-	public User(String username) {
+	public User(String username, String password, UserType type) {
 		this.username = username;
+		this.password = password;
+		this.type = type;
 		id = String.valueOf(idCounter++);
 	}
 
@@ -31,21 +35,18 @@ public class User implements Comparable<User> {
 		this.password = password;
 	}
 
-	public String getProPic() {
-		return proPic;
+	public String getProPicAddress() {
+		return proPicAddress;
 	}
 
-	public void setProPic(String proPic) {
-		this.proPic = proPic;
+	public void setProPicAddress(String proPicAddress) {
+		this.proPicAddress = proPicAddress;
 	}
 
 	public String getId() {
 		return id;
 	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
 
 	public int compareTo(User u) {
 		if (username.compareTo(u.username) == 0) {

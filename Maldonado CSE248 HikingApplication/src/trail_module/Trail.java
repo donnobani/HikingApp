@@ -1,4 +1,4 @@
-package trail_model;
+package trail_module;
 
 public class Trail implements Comparable<Trail> {
 	private String name;
@@ -7,11 +7,15 @@ public class Trail implements Comparable<Trail> {
 	private double gain;
 	private Level level;
 	private Type type;
-	//priVate CheckPoint checkpoint; 		(STOP or INTERSECTION)
-	
 
-	public Trail(String name) {
+	public Trail(String name, String headAddress, double length, double gain, Level level, Type type) {
+		super();
 		this.name = name;
+		this.headAddress = headAddress;
+		this.length = length;
+		this.gain = gain;
+		this.level = level;
+		this.type = type;
 	}
 
 	public String getName() {
@@ -46,7 +50,7 @@ public class Trail implements Comparable<Trail> {
 		this.gain = gain;
 	}
 
-	public 	Level getLevel() {
+	public Level getLevel() {
 		return level;
 	}
 
@@ -66,9 +70,9 @@ public class Trail implements Comparable<Trail> {
 	public int compareTo(Trail o) {
 		if (name.compareTo(o.name) == 0) {
 			return 0;
-		} else if (name.compareTo(o.name)>0) {
+		} else if (name.compareTo(o.name) > 0) {
 			return 1;
-		}else {
+		} else {
 			return -1;
 		}
 	}
@@ -77,7 +81,5 @@ public class Trail implements Comparable<Trail> {
 	public String toString() {
 		return name;
 	}
-	
-	
 
 }
