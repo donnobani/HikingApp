@@ -18,8 +18,8 @@ public class History {
 		theList.add(token);
 	}
 	
-	public void addAll(Collection<HistoryToken> tokenCollection) {
-		theList.addAll(tokenCollection);
+	public void addAll(Collection<HistoryToken> tokens) {
+		theList.addAll(tokens);
 	}
 	
 	public boolean remove(HistoryToken token) {
