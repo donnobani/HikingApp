@@ -18,6 +18,11 @@ public class User implements Comparable<User> {
 		this.type = type;
 		id = String.valueOf(idCounter++);
 	}
+	
+	public User(String username, String password) { //dummy constructor for comparing
+		this.username = username;	
+		this.password = password;
+	}
 
 	public String getUsername() {
 		return username;
@@ -60,7 +65,7 @@ public class User implements Comparable<User> {
 
 	@Override
 	public String toString() {
-		return "Username: " + username;
+		return "Username: " + username+"\nID: "+id;
 	}
 	
 	
