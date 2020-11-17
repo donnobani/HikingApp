@@ -8,7 +8,9 @@ public class Trail implements Comparable<Trail> {
 	private Level level;
 	private Type type;
 
-	public Trail(String name, String headAddress, double length, double gain, Level level, Type type) {
+	public Trail(String name, String headAddress,
+			double length, double gain,
+			Level level, Type type) {
 		super();
 		this.name = name;
 		this.headAddress = headAddress;

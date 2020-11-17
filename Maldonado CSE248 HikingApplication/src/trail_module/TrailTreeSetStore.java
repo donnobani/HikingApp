@@ -37,4 +37,9 @@ public class TrailTreeSetStore {
 	public void display() {
 		theSet.stream().forEach(System.out::println);
 	}
+	
+	public TreeSet<Trail> getTreeSet(){
+		return theSet;
+	}
+
 }
