@@ -47,6 +47,10 @@ public class HistoryToken { //one token per trail on history
 	public void setDuration(double duration) {
 		this.duration = duration;
 	}
+	
+	public String toString() {
+		return "Name: "+trailName;
+	}
 
 	
 	public int compareTo(HistoryToken u) {

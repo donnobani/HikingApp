@@ -81,7 +81,7 @@ public class Trail implements Comparable<Trail> {
 
 	@Override
 	public String toString() {
-		return name;
+		return "Name: "+name+" Address: "+headAddress;
 	}
 
 }

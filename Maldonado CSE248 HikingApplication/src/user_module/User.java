@@ -16,12 +16,25 @@ public class User implements Comparable<User> {
 		this.username = username;
 		this.password = password;
 		this.type = type;
+		history = new History();
+		id = String.valueOf(idCounter++);
+	}
+	
+	public User(String username, String password, UserType type, History history) {
+		this.username = username;
+		this.password = password;
+		this.history = history;
+		this.type = type;
 		id = String.valueOf(idCounter++);
 	}
 	
 	public User(String username, String password) { //dummy constructor for comparing
 		this.username = username;	
 		this.password = password;
+	}
+
+	public User() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getUsername() {
@@ -47,6 +60,14 @@ public class User implements Comparable<User> {
 	public void setProPicAddress(String proPicAddress) {
 		this.proPicAddress = proPicAddress;
 	}
+	
+	public History getHistory() {
+		return history;
+	}
+	
+	public void setHistory(History history) {
+		this.history = history;
+	}
 
 	public String getId() {
 		return id;
@@ -65,7 +86,7 @@ public class User implements Comparable<User> {
 
 	@Override
 	public String toString() {
-		return "Username: " + username+"\nID: "+id;
+		return "USER:" + username+" PASS:"+password;
 	}
 	
 	
